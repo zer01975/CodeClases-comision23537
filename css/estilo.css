@@ -6,6 +6,29 @@
     list-style: none;
     font-family: 'Open Sans', sans-serif;
 }
+/*:::::Header*/
+
+
+
+/*:::::Main*/
+main{
+    background-color: #1a3958;
+    color:#efefef;
+}
+.resumenVistazo{
+    width: 75%;
+    margin:auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.resumenVistazo:hover{
+    background-color:#112538;
+}
+.tituloResumen{
+    font-size: 1em;
+}
+
 /*:::::Pie de Pagina*/
 .pie-pagina{
     width: 100%;
