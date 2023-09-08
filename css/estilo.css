@@ -1,6 +1,7 @@
 :root{
     --fondo-principal: #0a1a2a;
     --fondo-secundario: #0a141d;
+    
 }
 
 *{
@@ -13,7 +14,25 @@
 }
 /*:::::Header*/
 
+.navbar{
+    background-color: var(--fondo-secundario);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 20px 10px;
+    vertical-align: baseline;
 
+}
+
+.navbar .boton{
+    padding: 20px;
+}
+
+.navbar a{
+    color: #fff;
+    background-color: var(--fondo-principal);
+    padding: 10px;
+}
 
 /*:::::Main*/
 main{
@@ -29,7 +48,7 @@ main{
 }
 .resumenVistazo:hover{
     background-color:#1a3958;
-}
+} /*ATENCION Esto falla en PREVIEW*/
 .tituloResumen{
     font-size: 1em;
 }
