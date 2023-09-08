@@ -1,3 +1,8 @@
+:root{
+    --fondo-principal: #0a1a2a;
+    --fondo-secundario: #0a141d;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -12,11 +17,11 @@
 
 /*:::::Main*/
 main{
-    background-color: #0a1a2a;
+    background-color: var(--fondo-principal);
     color:#efefef;
 }
 .resumenVistazo{
-    background-color: #0a1a2a;
+    background-color: var(--fondo-principal);
     width: 75%;
     margin:auto;
     padding: 20px;
@@ -32,7 +37,7 @@ main{
 /*:::::Pie de Pagina*/
 .pie-pagina{
     width: 100%;
-    background-color: #0a141d;
+    background-color: var(--fondo-secundario);
 }
 .pie-pagina .grupo-1{
     width: 100%;
@@ -82,7 +87,7 @@ main{
     color: aqua;
 }
 .pie-pagina .grupo-2{
-    background-color: #0a1a2a;
+    background-color: var(--fondo-principal);
     padding: 15px 10px;
     text-align: center;
     color: #fff;
