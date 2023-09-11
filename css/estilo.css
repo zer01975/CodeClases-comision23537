@@ -48,8 +48,8 @@ label {
     display: block;
     /*responsive*/
     text-decoration: none;
-    padding: 1.5em 1.5em;
-    padding: 25px;
+    /*padding: 1.5em 1.5em;*/
+    padding: 10%;
     font-size: 18px;
 }
 
