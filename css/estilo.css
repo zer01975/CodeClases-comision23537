@@ -161,4 +161,87 @@ main{
         grid-gap:30px;
         padding: 35px 0px;
     }
+
+    .menu-item {
+        font-size: 14px;
+    }
+    #logo-menu {
+        display: none;
+    }
+
+    #logo-hamb {
+        display: block;
+        width: 80px;
+        height: 30px;
+        float: right;
+    }
+
+    .menu-container {
+        display: none;
+    }
+
+    #menu-input {
+        visibility: visible;
+    }
+    nav {
+        background-color: var(--fondo-secundario);
+        padding-top: 5px;
+    }
+
+    ul {
+        display: none;
+    }
+
+    input:checked~ul {
+        display: block;
+    }
+    input {
+        display: none;
+    }
+    .nav,label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 18px;
+        user-select: none;
+        background-color: orange;
+        align-items: center;
+
+    }
+
+    label:hover {
+        background: grey;
+    }
+
+    /* cuando el menú está expandido*/
+    input:checked~label {
+        background: lightgrey;
+    }
+    ul {
+        margin-top: 0px;
+        padding: 0px;
+        padding-top: 100px;
+        width: 200px;
+        position: absolute;/*por sobre contenido*/
+    }
+
+    li {
+        display: block;
+        background: grey;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+    }
+    /*mouse pasa encima de cada link del menu*/
+    li:hover {
+        filter: brightness(110%);
+    }
+
 }
