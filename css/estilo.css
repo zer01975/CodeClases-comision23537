@@ -14,25 +14,65 @@
 }
 /*:::::Header*/
 
-.navbar{
+/*---Nav---*/
+#logo-menu {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+/*hamburguesa*/
+.nav-menu input,
+label {
+    display: none;
+}
+#logo-hamb {
+    display: none;
+}
+/*hamburguesa*/
+
+
+.menu-container {
+    display: grid;
+    list-style-type: none;
+    /*grid-template-columns: auto auto auto auto auto;*/
+    grid-template-columns: repeat(5, 20%);
+    justify-content: space-around;
+    text-align: center;
     background-color: var(--fondo-secundario);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 20px 10px;
-    vertical-align: baseline;
-
+    padding: 0px;
+    margin: 0px;
 }
 
-.navbar .boton{
-    padding: 20px;
+.menu-item {
+    color: white;
+    display: block;
+    /*responsive*/
+    text-decoration: none;
+    /*padding: 1.5em 1.5em;*/
+    padding: 25px;
+    font-size: 18px;
 }
 
-.navbar a{
-    color: #fff;
-    background-color: var(--fondo-principal);
-    padding: 10px;
+.menu-item:hover {
+    background: tomato;
+    color: white;
+    border-radius: 5PX;
+    border: 2px solid white;
+    border-bottom: 0ch;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: yellow;
 }
+
+#pag-activa {
+    background: var(--fondo-principal);
+    border: 2px solid white;
+    border-bottom: 0ch;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: yellow;
+}
+
 
 /*:::::Main*/
 main{
