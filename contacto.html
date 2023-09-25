@@ -21,35 +21,30 @@
         <ul class="menu-container">
             <a id="caja-logo" href="index.html"><img id="logo-menu" src="img/CodoACodo2.jpg" alt="LogoCodoACodo"></a>
             <li><a class="menu-item"  href="index.html">Inicio</a></li>
-            <li><a class="menu-item" href="contacto.html">Contacto</a></li>
-            <li><a class="menu-item" id="pag-activa" href="register.html">Registro</a></li>
+            <li><a class="menu-item" id="pag-activa" href="contacto.html">Contacto</a></li>
+            <li><a class="menu-item" href="register.html">Registro</a></li>
             <li><a class="menu-item" href="login.html">Login</a></li>
-
-
         </ul>
     </nav>
     <main>
-        <h2>Registro</h2>
-        <br>
-        <p>Complete con sus datos para Registarse</p>
-        <br>
-        <form>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" class="input-padron" required>
-            <br>
-            <br>
-            <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" class="input-padron" required>
-            <br>
-            <br>
-            <label for="correoelectronico">Correo Electrónico</label>
-            <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
-            <br>
-            <input type="submit" value="Enviar formulario" class="enviar">
-        </form>   
-        <br>
-        <br>
-        <a href="mailto:contactocurso23537@gmail.com">Enviar correo</a>
+        <div id="contform">
+            <form>
+                <label for="nombreapellido">Nombre</label>
+                <input type="text" id="nombreapellido" class="input-padron" required>
+
+                <label for="nombreapellido">Apellido</label>
+                <input type="text" id="nombreapellido" class="input-padron" required>
+
+                <label for="correoelectronico">Correo Electrónico</label>
+                <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
+
+                <label for="mensaje">Mensaje</label>
+                <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
+                    
+                <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de CodeClases?</label>                
+                <input type="submit" value="Enviar formulario" class="enviar">
+            </form>
+        </div>
     </main>
 
 
