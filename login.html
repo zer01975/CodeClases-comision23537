@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1"></script>
-    <script src="js/main.js"></script>
+    <script src="JS/main.js"></script>
     <title>CodeClases</title>
 </head>
 
@@ -23,9 +23,9 @@
         <ul class="menu-container">
             <a id="caja-logo" href="index.html"><img id="logo-menu" src="img/CodoACodo2.jpg" alt="LogoCodoACodo"></a>
             <li><a class="menu-item" href="index.html">Inicio</a></li>
-            <li><a class="menu-item" href="perfil.html">Perfil</a></li>
+            <li><a class="menu-item" href="contacto.html">Contacto</a></li>
             <li><a class="menu-item" href="register.html">Registro</a></li>
-            <li><a class="menu-item"  id="pag-activa" href="login.html">Login</a></li>
+            <li><a class="menu-item" id="pag-activa" href="login.html">Login</a></li>
 
 
         </ul>
@@ -36,15 +36,15 @@
             <div id="central">
                 <div id="login">
                     <div class="titulo">
-                        <h2> Bienvenido</h2> 
-                     </div>
-                     <form id='log-in'>
-                         <h3>Ingreso</h3>
-                         Correo<input type='email' name='email' required />
-                         Contraseña<input type='password' name='password' required />
-                         <input class="register" type='submit'>
-                     </form>
-    
+                       <h2> Bienvenido</h2> 
+                    </div>
+                    <form id='log-in'>
+                        <h3>Ingreso</h3>
+                        Correo<input type='email' name='email' required />
+                        Contraseña<input type='password' name='password' required />
+                        <input class="register" type='submit'>
+                    </form>
+
                     <div class="pie-form">
                         <!-- <a href="#">¿Perdiste tu contraseña?</a> -->
                         <a href="register.html">¿No tienes Cuenta? Registrate</a>
@@ -57,10 +57,11 @@
                             minutes</small>
                         <h3>Refresh Token</h3>
                         <input readonly=readonly type='text' id='refresh-token' /> <small>Supabase-js will use this to
-                            automatically fetch a new accessToken for you every 60 mins whilst the client is running</small>
+                            automatically fetch a new accessToken for you every 60 mins whilst the client is
+                            running</small>
                     </form>
                 </div>
-                
+
             </div>
         </div>
 
