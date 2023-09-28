@@ -1,4 +1,11 @@
-*{
+:root {
+    --fondo-principal: #0a1a2a;
+    --fondo-secundario: #0a141d;
+    --fondo-vistazo: #1a3958;
+
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,44 +13,146 @@
     list-style: none;
     font-family: 'Open Sans', sans-serif;
 }
-/*:::::Pie de Pagina*/
-.pie-pagina{
-    width: 100%;
-    background-color: #0a141d;
+
+/*:::::Header*/
+
+/*---Nav---*/
+#logo-menu {
+    width: 50%;
+    display: block;
+    margin: auto;
+    padding: 5PX;
 }
-.pie-pagina .grupo-1{
+#caja-logo{
+    
+    border-bottom: 1px solid white;
+}
+/*hamburguesa*/
+.nav-menu input,
+label {
+    display: none;
+}
+#logo-hamb {
+    display: none;
+}
+/*hamburguesa*/
+
+
+.menu-container {
+    display: grid;
+    list-style-type: none;
+    /*grid-template-columns: auto auto auto auto auto;*/
+    grid-template-columns: repeat(5, 20%);
+    justify-content: space-around;
+    text-align: center;
+    background-color: var(--fondo-secundario);
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu-item {
+    color: white;
+    display: block;
+    /*responsive*/
+    text-decoration: none;
+    padding: 10%;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+}
+
+.menu-item:hover {
+    background: tomato;
+    color: white;
+    /*border-radius: 5PX;*/
+    border: 1px solid white;
+    border-bottom: 0ch;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: yellow;
+}
+
+#pag-activa {
+    background: var(--fondo-principal);
+    border: 1px solid white;
+    border-bottom: 0ch;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: yellow;
+}
+
+/*:::::Main*/
+main {
+    background-color: var(--fondo-principal);
+    color: #efefef;
+}
+
+.resumenVistazo {
+    background-color: var(--fondo-principal);
+    width: 75%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.resumenVistazo:hover {
+    background-color:var(--fondo-vistazo);
+}
+
+/*ATENCION Esto falla en PREVIEW*/
+.tituloResumen {
+    font-size: 1em;
+}
+
+/*ATENCION Esto falla en PREVIEW*/
+.tituloResumen {
+    font-size: 1em;
+}
+
+/*:::::Pie de Pagina*/
+.pie-pagina {
+    width: 100%;
+    background-color: var(--fondo-secundario);
+}
+
+.pie-pagina .grupo-1 {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
+    grid-gap: 50px;
     padding: 45px 0px;
 }
-.pie-pagina .grupo-1 .box .logo{
+
+.pie-pagina .grupo-1 .box .logo {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.pie-pagina .grupo-1 .logo img{
+
+.pie-pagina .grupo-1 .logo img {
     width: 150px;
 }
-.pie-pagina .grupo-1 .box h2{
+
+.pie-pagina .grupo-1 .box h2 {
     color: #fff;
     margin-bottom: 25px;
     font-size: 20px;
 }
-.pie-pagina .grupo-1 .box li a{
+
+.pie-pagina .grupo-1 .box li a {
     color: #efefef;
     margin-bottom: 10px;
 }
-.pie-pagina .grupo-1 .box li a:hover{
+
+.pie-pagina .grupo-1 .box li a:hover {
     color: yellow;
-   
+
 }
-.pie-pagina .grupo-1 .red-social a{
+
+.pie-pagina .grupo-1 .red-social a {
     display: inline-block;
     text-decoration: none;
     width: 45px;
@@ -55,23 +164,219 @@
     text-align: center;
     transition: all 300ms ease;
 }
-.pie-pagina .grupo-1 .red-social a:hover{
+
+.pie-pagina .grupo-1 .red-social a:hover {
     color: aqua;
 }
-.pie-pagina .grupo-2{
-    background-color: #0a1a2a;
+
+.pie-pagina .grupo-2 {
+    background-color: var(--fondo-principal);
     padding: 15px 10px;
     text-align: center;
     color: #fff;
 }
-.pie-pagina .grupo-2{
+
+.pie-pagina .grupo-2 {
     font-size: 15px;
 }
-@media screen and (max-width:800px){
-    .pie-pagina .grupo-1{
+/*loginRegsiter*/
+#contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+}
+
+#central {
+    max-width: 380px;
+    width: 100%;
+    background-color: #3282b8;
+    border-radius: 8px;
+}
+#centralRegistro {
+    max-width: 380px;
+    width: 100%;
+    background-color: #b84632;
+    border-radius: 8px;
+}
+
+.titulo {
+    font-size: 150%;
+    color:#bbe1fa;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#login  {
+    width: 100%;
+    padding: 50px 30px;
+      
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 5px;
+      
+    box-sizing: border-box;
+}
+
+
+
+#login input {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #1b262c;
+    
+    display: block;
+    width: 100%;
+    height: 40px;
+    
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 10px;
+    
+    box-sizing: border-box;
+    
+    border: none;
+    border-radius: 5px;
+    
+    
+}
+/*#login input:hover {
+    font-family: 'Overpass', sans-serif;
+    color: #E4E4E4;
+}*/
+
+
+#login .register:hover {
+    /*background-color: #0f4c75;*/
+    background-color: #115c8e;
+    
+    color:#bbe1fa ;
+}
+#login .register {
+    background-color: #0d4469;
+    
+    color:#bbe1fa ;
+}
+
+.pie-form {
+    font-size: 150%;
+    text-align: center;    
+    margin-top: 15px;
+}
+
+.pie-form a {
+    display: block;
+    text-decoration: none;
+    color: #bbe1fa;
+    margin-bottom: 3px;
+}
+
+.pie-form a:hover {
+    color: #0f4c75;
+}
+
+
+/**/
+
+@media screen and (max-width:800px) {
+    .pie-pagina .grupo-1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
-        grid-gap:30px;
+        grid-gap: 30px;
         padding: 35px 0px;
     }
+
+    /* #logo-menu {
+        width: 80px;
+        padding-top: 5PX;
+        padding-right: 5px;
+    } */
+
+    .menu-item {
+        font-size: 14px;
+    }
+    #logo-menu {
+        display: none;
+    }
+
+    #logo-hamb {
+        display: block;
+        width: 80px;
+        height: 30px;
+        float: right;
+    }
+
+    .menu-container {
+        display: none;
+    }
+
+    #menu-input {
+        visibility: visible;
+    }
+    nav {
+        background-color: var(--fondo-secundario);
+        padding-top: 5px;
+    }
+
+    ul {
+        display: none;
+    }
+
+    input:checked~ul {
+        display: block;
+    }
+    input {
+        display: none;
+    }
+    nav label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 18px;
+        user-select: none;
+        background-color: orange;
+        align-items: center;
+
+    }
+
+    label:hover {
+        background: grey;
+    }
+
+    /* cuando el menú está expandido*/
+     input:checked~label {
+        background: lightgrey;
+    }
+    ul {
+        margin-top: 0px;
+        padding: 0px;
+        padding-top: 100px;
+        width: 200px;
+        position: absolute;/*por sobre contenido*/
+    }
+
+    li {
+        display: block;
+        background: grey;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+    }
+    /*mouse pasa encima de cada link del menu*/
+    li:hover {
+        filter: brightness(110%);
+    }
+
+
 }
