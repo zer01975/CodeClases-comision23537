@@ -379,6 +379,10 @@ main {
     }
 }
 
+<<<<<<<<< Temporary merge branch 1
+
+}
+=========
 /*Aquí comienza el CSS del Contacto*/
 #contform{
     display: flex;
@@ -439,3 +443,4 @@ form label, form legend{
     background: darkorange;
     transform: scale(1.2);
 }
+>>>>>>>>> Temporary merge branch 2
