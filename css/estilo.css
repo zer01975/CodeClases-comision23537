@@ -278,7 +278,7 @@ main {
 .pie-form a:hover {
     color: #0f4c75;
 }
-/**/
+/* formulario*/
 #contform{
     display: flex;
     justify-content: center;
@@ -326,7 +326,18 @@ form label, form legend{
     padding: 15px 0;
     font-size: 18px;
     font-weight: bold;
-    co…
+    color:white;
+    background: orange;
+    border:none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor:pointer;
+}
+
+.enviar:hover{
+    background: darkorange;
+    transform: scale(1.2);
+}
 
 /**/
 @media screen and (max-width:800px) {
