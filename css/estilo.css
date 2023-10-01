@@ -17,6 +17,10 @@
 /*:::::Header*/
 
 /*---Nav---*/
+.nav-menu{
+    position: sticky;
+	top: 0;
+}
 #logo-menu {
     width: 50%;
     display: block;
@@ -304,7 +308,7 @@ main {
     vertical-align: auto;
 */
 
-form label, form legend{
+#contform label, #contform legend{
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
@@ -348,6 +352,11 @@ form label, form legend{
         padding: 35px 0px;
     }
 
+    #contform form{
+        text-align: center;
+        width: 90%;
+    }
+
     /* #logo-menu {
         width: 80px;
         padding-top: 5PX;
@@ -380,14 +389,12 @@ form label, form legend{
         padding-top: 5px;
     }
 
-    ul {
-        display: none;
-    }
+    
 
-    input:checked~ul {
+    nav input:checked~ul {
         display: block;
     }
-    input {
+   nav input {
         display: none;
     }
     nav label {
@@ -407,7 +414,7 @@ form label, form legend{
 
     }
 
-    label:hover {
+    nav label:hover {
         background: grey;
     }
 
@@ -415,7 +422,7 @@ form label, form legend{
      input:checked~label {
         background: lightgrey;
     }
-    ul {
+    nav ul {
         margin-top: 0px;
         padding: 0px;
         padding-top: 100px;
@@ -423,7 +430,7 @@ form label, form legend{
         position: absolute;/*por sobre contenido*/
     }
 
-    li {
+   .menu-container li {
         display: block;
         background: grey;
         margin: 0;
@@ -432,7 +439,7 @@ form label, form legend{
         border-bottom: 1px solid grey;
     }
     /*mouse pasa encima de cada link del menu*/
-    li:hover {
+   .menu-container li:hover {
         filter: brightness(110%);
     }
 
