@@ -7,10 +7,10 @@ var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
 window.userToken = null
 
 document.addEventListener('DOMContentLoaded', function (event) {
- 
+
   var logInForm = document.querySelector('#log-in')
   logInForm.onsubmit = logInSubmitted.bind(logInForm)
-  
+
 })
 
 
@@ -22,7 +22,7 @@ const logInSubmitted = (event) => {
   supabase.auth
     .signIn({ email, password })
     .then((response) => {
-     //response.error ? alert(response.error.message) : setToken(response)
+      //response.error ? alert(response.error.message) : setToken(response)
       response.error ? alert("datos incorrectos") : setToken(response)
     })
     .catch((err) => {
@@ -43,8 +43,8 @@ const logoutSubmitted = (event) => {
     .then((_response) => {
       document.querySelector('#access-token').value = ''
       document.querySelector('#refresh-token').value = ''
-    alert('Logout successful')
-      
+      alert('Logout successful')
+
     })
     .catch((err) => {
       //alert("datos incorrectos")
@@ -60,10 +60,10 @@ function setToken(response) {
     document.querySelector('#refresh-token').value = response.session.refresh_token
     alert('Bienvenido ' + response.user.email)
     document.getElementById("log-in").reset();
-    window.location="prueba.html";
-    
-    
+    window.location = "dashboard.html";
+
+
   }
-  
+
 }
 
