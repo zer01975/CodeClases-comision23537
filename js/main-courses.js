@@ -9,7 +9,8 @@ window.userToken = null
 var userId = '';
 
 
-const fetchUserData = () => {
+
+    const fetchUserData = () => {
     const currentUser = supabase.auth.user();
     if (currentUser) {
         return JSON.stringify(currentUser);
@@ -53,22 +54,75 @@ async function getCourseName() {
         let { data: cursos, error } = await supabase
             .from('cursos')
             .select('course_name')
-            .match('owner_id', userId);
-
+            .eq('owner_id', userId); // Filter by owner_id equal to userId
 
         if (error) {
             console.error('Error recibiendo el nombre del curso:', error);
             return null;
         }
+        return JSON.stringify(cursos);
+
     } catch (err) {
         console.error('Error en getCOurseName:', err)
+        return null;
     }
 
 }
 
-console.log(supabase.auth.user())
-console.log(supabase.auth.user().email)
-console.log(fetchUserData())
-console.log(getAvailableCourses())
-console.log(getCourseName())
-console.log(userId)
+// async function main() {
+//     console.log(supabase.auth.user());
+//     console.log(supabase.auth.user().email);
+//     console.log(await fetchUserData());
+//     console.log(await getAvailableCourses());
+//     console.log(await getCourseName());
+//     console.log(userId);
+// }
+
+// main();
+document.addEventListener('DOMContentLoaded', function() {
+
+
+    async function displayCourses() {
+        try {
+          let { data: cursos, error } = await supabase
+            .from('cursos')
+            .select('*') // Select all columns
+            .eq('owner_id', userId);
+      
+          if (error) {
+            console.error('Error receiving course data:', error);
+            return;
+          }
+      
+          const coursesContainer = document.getElementById('coursesContainer');
+      
+          cursos.forEach((curso) => {
+            // Create a card container div for each course
+            const card = document.createElement('div');
+            card.className = 'course-card';
+      
+            // Create elements for each piece of course data
+            const courseName = document.createElement('h2');
+            courseName.textContent = curso.course_name;
+      
+            const courseDescription = document.createElement('p');
+            courseDescription.textContent = curso.course_info;
+      
+            // You can create more elements for other data as needed
+      
+            // Append the elements to the card
+            card.appendChild(courseName);
+            card.appendChild(courseDescription);
+      
+            // Append the card to the container
+            coursesContainer.appendChild(card);
+          });
+        } catch (err) {
+          console.error('Error in displayCourses:', err);
+        }
+      }
+      
+      displayCourses();
+      
+
+});
