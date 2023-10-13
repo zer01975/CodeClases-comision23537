@@ -10,7 +10,7 @@ var userId = '';
 
 
 
-    const fetchUserData = () => {
+const fetchUserData = () => {
     const currentUser = supabase.auth.user();
     if (currentUser) {
         return JSON.stringify(currentUser);
@@ -79,50 +79,50 @@ async function getCourseName() {
 // }
 
 // main();
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
 
     async function displayCourses() {
         try {
-          let { data: cursos, error } = await supabase
-            .from('cursos')
-            .select('*') // Select all columns
-            .eq('owner_id', userId);
-      
-          if (error) {
-            console.error('Error receiving course data:', error);
-            return;
-          }
-      
-          const coursesContainer = document.getElementById('coursesContainer');
-      
-          cursos.forEach((curso) => {
-            // Create a card container div for each course
-            const card = document.createElement('div');
-            card.className = 'course-card';
-      
-            // Create elements for each piece of course data
-            const courseName = document.createElement('h2');
-            courseName.textContent = curso.course_name;
-      
-            const courseDescription = document.createElement('p');
-            courseDescription.textContent = curso.course_info;
-      
-            // You can create more elements for other data as needed
-      
-            // Append the elements to the card
-            card.appendChild(courseName);
-            card.appendChild(courseDescription);
-      
-            // Append the card to the container
-            coursesContainer.appendChild(card);
-          });
+            let { data: cursos, error } = await supabase
+                .from('cursos')
+                .select('*') // Select all columns
+                .eq('owner_id', userId);
+
+            if (error) {
+                console.error('Error receiving course data:', error);
+                return;
+            }
+
+            const coursesContainer = document.getElementById('coursesContainer');
+
+            cursos.forEach((curso) => {
+                // Crear un div para cada curso
+                const card = document.createElement('div');
+                card.className = 'course-card';
+
+                // Crear elementos para cada dato de la fila
+                const courseName = document.createElement('h2');
+                courseName.textContent = curso.course_name;
+
+                const courseDescription = document.createElement('p');
+                courseDescription.textContent = curso.course_info;
+
+                //Se pueden agregar mas campos
+
+                // Agregar los elementos a la tarjeta (el div)
+                card.appendChild(courseName);
+                card.appendChild(courseDescription);
+
+                // Agregar la tarjeta al contenedor
+                coursesContainer.appendChild(card);
+            });
         } catch (err) {
-          console.error('Error in displayCourses:', err);
+            console.error('Error en displayCourses:', err);
         }
-      }
-      
-      displayCourses();
-      
+    }
+
+    displayCourses();
+
 
 });
