@@ -3,7 +3,7 @@ let pie = `
     <div class="grupo-1">
                     <div class="logo">
                         <a href="#">
-                            <img src="img/CodoACodo.jpg" alt="Logo de SLee Dw">
+                            <img src="./img/pruebalogo3982.jpg" alt="Logo de SLee Dw">
                         </a>
                     </div>
                     <div class="box">
