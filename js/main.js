@@ -3,14 +3,14 @@ let pie = `
     <div class="grupo-1">
                     <div class="logo">
                         <a href="#">
-                            <img src="img/CodoACodo.jpg" alt="Logo de SLee Dw">
+                        <img src="./img/Copia de Circuit Technology Logo (4).png" alt="Logo del sitio">
                         </a>
                     </div>
                     <div class="box">
-                        <h2>Nombre Proyecto</h2>
+                        <h2>MIS CLASES</h2>
                         <ul>
-                            <li><a href="#">Sobre el Proyecto</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            <li><a href="index.html">Sobre el Proyecto</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
                             <li><a href="#">Preguntas frecuentes</a></li>
                             <li><a href="#">Ayuda</a></li>
                         </ul>
