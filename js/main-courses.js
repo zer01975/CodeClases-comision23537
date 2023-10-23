@@ -38,14 +38,14 @@ async function getAvailableCourses() {
             .select('*');
 
         if (error) {
-            console.error('Error fetching cursos:', error);
-            return null; // or handle the error as needed
+            console.error('Error recibiendo cursos:', error);
+            return null;
         }
 
         return JSON.stringify(cursos);
     } catch (err) {
-        console.error('Error in getCursos:', err);
-        return null; // or handle the error as needed
+        console.error('Error en getCursos:', err);
+        return null;
     }
 }
 
@@ -54,7 +54,7 @@ async function getCourseName() {
         let { data: cursos, error } = await supabase
             .from('cursos')
             .select('course_name')
-            .eq('owner_id', userId); // Filter by owner_id equal to userId
+            .eq('owner_id', userId); // Filtrar por owner_id igual a user_id
 
         if (error) {
             console.error('Error recibiendo el nombre del curso:', error);
@@ -63,7 +63,7 @@ async function getCourseName() {
         return JSON.stringify(cursos);
 
     } catch (err) {
-        console.error('Error en getCOurseName:', err)
+        console.error('Error en getCourseName:', err)
         return null;
     }
 
@@ -79,6 +79,8 @@ async function getCourseName() {
 // }
 
 // main();
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
 
@@ -86,11 +88,11 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             let { data: cursos, error } = await supabase
                 .from('cursos')
-                .select('*') // Select all columns
+                .select('*') // Seleccionar todas las columnas
                 .eq('owner_id', userId);
 
             if (error) {
-                console.error('Error receiving course data:', error);
+                console.error('Error recibiendo datos de curso:', error);
                 return;
             }
 

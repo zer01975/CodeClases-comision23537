@@ -35,7 +35,8 @@ let pie = `
                     <p>&copy; 2023 <b>Clase-Codo a Codo</b> - Sitio desarrollado por:</p>
                     <span>Lucas González, Marcelo Pesoa, Lisandro Iguacel y Marcilia Nietto</span>
                 </div>
+    </div>
     `
 
 document.querySelector(".nav-menu").innerHTML = nav
-document.querySelector(".pie-pagina").innerHTML = pie
+document.querySelector("#footer").innerHTML = pie
