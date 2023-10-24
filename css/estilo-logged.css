@@ -5,6 +5,10 @@
 
 }
 
+html {
+    background-color: var(--fondo-principal);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -448,3 +452,36 @@ main {
     max-width: 20%;
     height: auto;
   }
+
+  .course-card {
+    flex: 200px;
+    max-width: 200px;
+    background-color: var(--fondo-vistazo);
+    width: 75%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.courseContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.student-card {
+    flex: 200px;
+    max-width: 200px;
+    background-color: var(--fondo-vistazo);
+    width: 75%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.studentContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+

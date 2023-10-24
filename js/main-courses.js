@@ -82,8 +82,6 @@ async function getCourseName() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
     async function displayCourses() {
         try {
             let { data: cursos, error } = await supabase
@@ -125,6 +123,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     displayCourses();
-
 
 });
