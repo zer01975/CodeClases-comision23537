@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-la">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo-logged.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1"></script>
+
+    <title>Nuevo Curso</title>
+    <link rel="shortcut icon" href="./img/faviconlampara2.png" type="image/x-icon">
+</head>
+
+<body>
+    <header></header>
+
+    <nav class="nav-menu"></nav>
+
+    <main>
+        <div id="contform">
+            <form>
+                <label for="nombreapellido">Nombre</label>
+                <input type="text" id="nombreapellido" class="input-padron" required>
+
+                <label for="nombreapellido">Apellido</label>
+                <input type="text" id="nombreapellido" class="input-padron" required>
+
+                <label for="correoelectronico">Correo Electrónico</label>
+                <input type="email" id="correoelectronico" class="input-padron" required
+                    placeholder="email@dominio.com">
+
+                <label for="mensaje">Mensaje</label>
+                <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
+
+                <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de
+                    CodeClases?</label>
+                <input type="submit" value="Enviar formulario" class="enviar">
+            </form>
+        </div>
+    </main>
+
+    <footer class="pie-pagina"></footer>
+
+    <script src="js/main-logged.js"></script>
+
+</body>
+
+</html>

@@ -63,46 +63,67 @@ main();
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    async function displayStudents() {
-        try {
-            let { data: estudiantes, error } = await supabase
-                .from('estudiantes')
-                .select('*') // Seleccionar todas las columnas
-                .eq('teacher_id', userId);
-
-            if (error) {
-                console.error('Error recibiendo datos de estudiantes:', error);
-                return;
-            }
-
-            const studentsContainer = document.getElementById('studentsContainer');
-
-            estudiantes.forEach((estudiante) => {
-                // Crear un div para cada curso
-                const card = document.createElement('div');
-                card.className = 'student-card';
-
-                // Crear elementos para cada dato de la fila
-                const studentName = document.createElement('h2');
-                studentName.textContent = estudiante.student_name + ' ' + estudiante.student_lastname;
-
-                const studentDescription = document.createElement('p');
-                studentDescription.textContent = estudiante.student_description;
-
-                //Se pueden agregar mas campos
-
-                // Agregar los elementos a la tarjeta (el div)
-                card.appendChild(studentName);
-                card.appendChild(studentDescription);
-
-                // Agregar la tarjeta al contenedor
-                studentsContainer.appendChild(card);
-            });
-        } catch (err) {
-            console.error('Error en displayStudents:', err);
-        }
-    }
-
+    
     displayStudents();
+    addStudent();
 
 });
+
+async function displayStudents() {
+    try {
+        let { data: estudiantes, error } = await supabase
+            .from('estudiantes')
+            .select('*') // Seleccionar todas las columnas
+            .eq('teacher_id', userId);
+
+        if (error) {
+            console.error('Error recibiendo datos de estudiantes:', error);
+            return;
+        }
+
+        const studentsContainer = document.getElementById('studentsContainer');
+
+        estudiantes.forEach((estudiante) => {
+            // Crear un div para cada curso
+            const card = document.createElement('div');
+            card.className = 'student-card';
+
+            // Crear elementos para cada dato de la fila
+            const studentName = document.createElement('h2');
+            studentName.textContent = estudiante.student_name + ' ' + estudiante.student_lastname;
+
+            const studentDescription = document.createElement('p');
+            studentDescription.textContent = estudiante.student_description;
+
+            //Se pueden agregar mas campos
+
+            // Agregar los elementos a la tarjeta (el div)
+            card.appendChild(studentName);
+            card.appendChild(studentDescription);
+
+            // Agregar la tarjeta al contenedor
+            studentsContainer.appendChild(card);
+        });
+    } catch (err) {
+        console.error('Error en displayStudents:', err);
+    }
+}
+
+
+async function addStudent() {
+    const card = document.createElement('div');
+    card.className = 'student-card';
+
+    const titulo = document.createElement('h2');
+    titulo.textContent = "Nuevo Estudiante";
+
+    // Agregar los elementos a la tarjeta (el div)
+    card.appendChild(titulo);
+
+    // Agregar la tarjeta al contenedor
+    studentsContainer.appendChild(card);
+
+    card.addEventListener('click', function() {
+        window.location.href = 'addStudent.html';
+    })
+}

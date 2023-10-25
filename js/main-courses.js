@@ -82,46 +82,68 @@ async function getCourseName() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    async function displayCourses() {
-        try {
-            let { data: cursos, error } = await supabase
-                .from('cursos')
-                .select('*') // Seleccionar todas las columnas
-                .eq('owner_id', userId);
-
-            if (error) {
-                console.error('Error recibiendo datos de curso:', error);
-                return;
-            }
-
-            const coursesContainer = document.getElementById('coursesContainer');
-
-            cursos.forEach((curso) => {
-                // Crear un div para cada curso
-                const card = document.createElement('div');
-                card.className = 'course-card';
-
-                // Crear elementos para cada dato de la fila
-                const courseName = document.createElement('h2');
-                courseName.textContent = curso.course_name;
-
-                const courseDescription = document.createElement('p');
-                courseDescription.textContent = curso.course_info;
-
-                //Se pueden agregar mas campos
-
-                // Agregar los elementos a la tarjeta (el div)
-                card.appendChild(courseName);
-                card.appendChild(courseDescription);
-
-                // Agregar la tarjeta al contenedor
-                coursesContainer.appendChild(card);
-            });
-        } catch (err) {
-            console.error('Error en displayCourses:', err);
-        }
-    }
 
     displayCourses();
+    addCourse();
 
 });
+
+
+async function displayCourses() {
+    try {
+        let { data: cursos, error } = await supabase
+            .from('cursos')
+            .select('*') // Seleccionar todas las columnas
+            .eq('owner_id', userId);
+
+        if (error) {
+            console.error('Error recibiendo datos de curso:', error);
+            return;
+        }
+
+        const coursesContainer = document.getElementById('coursesContainer');
+
+        cursos.forEach((curso) => {
+            // Crear un div para cada curso
+            const card = document.createElement('div');
+            card.className = 'course-card';
+
+            // Crear elementos para cada dato de la fila
+            const courseName = document.createElement('h2');
+            courseName.textContent = curso.course_name;
+
+            const courseDescription = document.createElement('p');
+            courseDescription.textContent = curso.course_info;
+
+            //Se pueden agregar mas campos
+
+            // Agregar los elementos a la tarjeta (el div)
+            card.appendChild(courseName);
+            card.appendChild(courseDescription);
+
+            // Agregar la tarjeta al contenedor
+            coursesContainer.appendChild(card);
+        });
+    } catch (err) {
+        console.error('Error en displayCourses:', err);
+    }
+}
+
+async function addCourse() {
+    const card = document.createElement('div');
+    card.className = 'course-card';
+
+    // Crear elementos para cada dato de la fila
+    const courseName = document.createElement('h2');
+    courseName.textContent = "Nuevo Curso";
+
+    // Agregar los elementos a la tarjeta (el div)
+    card.appendChild(courseName);
+
+    // Agregar la tarjeta al contenedor
+    coursesContainer.appendChild(card);
+
+    card.addEventListener('click', function() {
+        window.location.href = 'addCourse.html';
+    })
+}
