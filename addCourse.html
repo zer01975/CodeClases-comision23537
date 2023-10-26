@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-la">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo-logged.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1"></script>
+
+    <title>Nuevo Curso</title>
+    <link rel="shortcut icon" href="./img/faviconlampara2.png" type="image/x-icon">
+</head>
+
+<body>
+    <header></header>
+
+    <nav class="nav-menu"></nav>
+
+    <main>
+        <div id="contform">
+            <form>
+                <label for="nombreCurso">Nombre del curso</label>
+                <input type="text" id="nombreCurso" class="input-padron" required>
+
+                <label for="descripcionCurso">Descripción del curso</label>
+                <textarea cols="70" rows="10" id="descripcionCurso" class="input-padron" required></textarea>
+
+                <label class="checkbox"><input type="checkbox" checked>¿Está activo?</label>
+                <input type="submit" value="Crear curso" class="enviar">
+            </form>
+        </div>
+    </main>
+
+    <footer class="pie-pagina"></footer>
+
+    <script src="js/main-logged.js"></script>
+
+</body>
+
+</html>
