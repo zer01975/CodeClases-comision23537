@@ -427,7 +427,7 @@ main {
 
 .course-card {
     flex: 100px;
-    background-color: var(--fondo-vistazo);
+    background-color: var(--fondo-secundario);
     max-width: 75%;
     min-width: 500px;
     width: 50%;
@@ -435,19 +435,35 @@ main {
     padding: 20px;
     border-radius: 20px;
     justify-content: center;
+    transition: 1s all;
+
+}
+
+.course-card:hover {
+    transform: scale(1.1);
+    background-color: var(--fondo-vistazo);
+
 }
 
 
 .student-card {
     flex: 200px;
     max-width: 200px;
-    background-color: var(--fondo-vistazo);
+    background-color: var(--fondo-secundario);
     width: 75%;
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
+    transition: 1s all;
+
 }
+.student-card:hover {
+    transform: scale(1.1);
+    background-color: var(--fondo-vistazo);
+
+}
+
 
 #studentsContainer {
     display: flex;
@@ -458,7 +474,12 @@ main {
 }
 
 
-
+#logOut {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
 
 #logoutButton {
     width: 50%;

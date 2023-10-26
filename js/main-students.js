@@ -43,7 +43,7 @@ async function getAvailableStudents() {
             return null;
         }
 
-        return JSON.stringify(cursos);
+        return JSON.stringify(estudiantes);
     } catch (err) {
         console.error('Error en getAvailableStudents:', err);
         return null;

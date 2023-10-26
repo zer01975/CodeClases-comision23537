@@ -8,11 +8,24 @@ window.userToken = null
 
 document.addEventListener('DOMContentLoaded', function (event) {
 
-  var logInForm = document.querySelector('#log-in')
-  logInForm.onsubmit = logInSubmitted.bind(logInForm)
+  var logInForm = document.querySelector('#log-in');
+  var logOutForm = document.querySelector('#logOut');
 
-})
+  const user = supabase.auth.user();
+  const currentPagePath = window.location.pathname;
 
+  if (user && currentPagePath !== '/logout.html') {
+    window.location.href = 'dashboard.html';
+  }
+
+  if (logInForm) {
+    logInForm.onsubmit = logInSubmitted.bind(logInForm)
+  }
+
+  if (logOutForm) {
+    logOutForm.onsubmit = logoutSubmitted.bind(logOutForm);
+  }
+});
 
 const logInSubmitted = (event) => {
   event.preventDefault()
@@ -22,7 +35,6 @@ const logInSubmitted = (event) => {
   supabase.auth
     .signIn({ email, password })
     .then((response) => {
-      //response.error ? alert(response.error.message) : setToken(response)
       response.error ? alert("datos incorrectos") : setToken(response)
     })
     .catch((err) => {
@@ -31,9 +43,6 @@ const logInSubmitted = (event) => {
     })
 }
 
-const fetchUserDetails = () => {
-  alert(JSON.stringify(supabase.auth.user()))
-}
 
 const logoutSubmitted = (event) => {
   event.preventDefault()
@@ -41,14 +50,16 @@ const logoutSubmitted = (event) => {
   supabase.auth
     .signOut()
     .then((_response) => {
-      document.querySelector('#access-token').value = ''
-      document.querySelector('#refresh-token').value = ''
-      alert('Logout successful')
-
+      window.location = "index.html";
     })
     .catch((err) => {
-      //alert("datos incorrectos")
-      alert(err.response.text)
+      if (err && err.response) {
+        console.error('Logout error:', err.response);
+        alert('Hubo un error al cerrar sesion');
+      } else {
+        console.error('Error inesperado al cerrar sesion:', err)
+        alert('Hubo un error al cerrar sesion');
+      }
     })
 }
 
@@ -58,12 +69,8 @@ function setToken(response) {
   } else {
     document.querySelector('#access-token').value = response.session.access_token
     document.querySelector('#refresh-token').value = response.session.refresh_token
-    alert('Bienvenido ' + response.user.email)
     document.getElementById("log-in").reset();
-    window.location = "dashboard.html";
-
-
+    window.location.href = "dashboard.html";
+    
   }
-
 }
-
