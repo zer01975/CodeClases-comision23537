@@ -132,10 +132,10 @@ async function displayCourses() {
 async function addCourse() {
     const card = document.createElement('div');
     card.className = 'course-card';
-
     // Crear elementos para cada dato de la fila
     const courseName = document.createElement('h2');
     courseName.textContent = "Nuevo Curso";
+
 
     // Agregar los elementos a la tarjeta (el div)
     card.appendChild(courseName);
