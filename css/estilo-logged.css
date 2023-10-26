@@ -435,6 +435,25 @@ main {
     transition: 1s all;
 
 }
+.student-card {
+    flex: 180px;
+    max-width: 180px;
+    background-color: var(--fondo-secundario);
+    width: 60%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 1s all;
+}
+
+#studentsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
 #contform form {
     
