@@ -21,22 +21,14 @@
     <main>
         <div id="contform">
             <form>
-                <label for="nombreapellido">Nombre</label>
-                <input type="text" id="nombreapellido" class="input-padron" required>
+                <label for="nombreCurso">Nombre del curso</label>
+                <input type="text" id="nombreCurso" class="input-padron" required>
 
-                <label for="nombreapellido">Apellido</label>
-                <input type="text" id="nombreapellido" class="input-padron" required>
+                <label for="descripcionCurso">Descripción del curso</label>
+                <textarea cols="70" rows="10" id="descripcionCurso" class="input-padron" required></textarea>
 
-                <label for="correoelectronico">Correo Electrónico</label>
-                <input type="email" id="correoelectronico" class="input-padron" required
-                    placeholder="email@dominio.com">
-
-                <label for="mensaje">Mensaje</label>
-                <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
-
-                <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de
-                    CodeClases?</label>
-                <input type="submit" value="Enviar formulario" class="enviar">
+                <label class="checkbox"><input type="checkbox" checked>¿Está activo?</label>
+                <input type="submit" value="Crear curso" class="enviar">
             </form>
         </div>
     </main>
